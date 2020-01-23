@@ -31,7 +31,9 @@ import (
 // +genduck
 
 // Conditions is a simple wrapper around apis.Conditions to implement duck.Implementable.
-type Conditions apis.Conditions
+type Conditions struct {
+	apis.Conditions `json:",inline"`
+}
 
 // Conditions is an Implementable "duck type".
 var _ duck.Implementable = (*Conditions)(nil)
